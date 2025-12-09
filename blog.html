@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Your Name</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+
+    <h1>My Medium Blogs</h1>
+
+    <script src="https://cdn.jsdelivr.net/gh/xytoki/medium-api/medium-widget.js"></script>
+    <script>
+        MediumWidget.Init({
+            container: document.body,
+            rss: "https://medium.com/feed/@mahesh.r0608"
+        })
+    </script>
+
+</body>
+</html>
