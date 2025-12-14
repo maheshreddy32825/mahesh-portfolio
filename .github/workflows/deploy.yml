@@ -10,6 +10,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      dist-path: ${{ steps.build-site.outputs.dist }}
     steps:
       - uses: actions/checkout@v4
 
@@ -22,11 +24,20 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: npm run build
+        id: build-site
+        run: |
+          npm run build
+          echo "dist=./dist" >> $GITHUB_OUTPUT
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ${{ needs.build.outputs.dist-path }}
           publish_branch: gh-pages
