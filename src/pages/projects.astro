@@ -1,1 +1,15 @@
-hi
+---
+import { projects } from '../data/projects';
+---
+
+<section>
+  <h2>Projects</h2>
+  <ul>
+    {projects.map(project => (
+      <li>
+        <a href={project.url}>{project.name}</a> — {project.category}
+        <p>{project.description}</p>
+      </li>
+    ))}
+  </ul>
+</section>
