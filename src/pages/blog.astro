@@ -1,1 +1,15 @@
-
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { blogPosts } from '../data/blog';
+---
+<BaseLayout title="Blog">
+  <section class="space-y-6">
+    {blogPosts.map(post => (
+      <div class="border p-4 rounded-lg hover:shadow-md transition">
+        <a href={post.url} target="_blank" class="text-lg font-semibold hover:text-indigo-600">{post.title}</a>
+        <p class="text-sm text-gray-500">{post.date}</p>
+        <p>{post.summary}</p>
+      </div>
+    ))}
+  </section>
+</BaseLayout>
