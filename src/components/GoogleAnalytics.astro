@@ -1,0 +1,21 @@
+---
+const analyticsId = import.meta.env.PUBLIC_ANALYTICS_ID;
+
+// Only render if analytics ID is configured
+if (!analyticsId) {
+  console.warn('⚠️  Google Analytics ID not configured. Add PUBLIC_ANALYTICS_ID to .env.local');
+}
+---
+
+{analyticsId && (
+  <>
+    <!-- Google Analytics Script -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', import.meta.env.PUBLIC_ANALYTICS_ID);
+    </script>
+  </>
+)}

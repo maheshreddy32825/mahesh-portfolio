@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 const { children, title, description } = Astro.props;
 ---
 <html lang="en" class="antialiased scroll-smooth">
@@ -21,6 +22,9 @@ const { children, title, description } = Astro.props;
     <meta property="og:description" content={description || "Full-Stack DevOps, Cloud & SRE Engineer with 8+ years building scalable cloud infrastructure"} />
     <meta property="og:url" content={Astro.url.href} />
     <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Analytics -->
+    <GoogleAnalytics />
   </head>
   <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans transition-colors duration-300">
     <div class="min-h-screen flex flex-col">
