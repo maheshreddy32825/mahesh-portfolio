@@ -15,12 +15,118 @@ const posts = blogPosts.length > 0 ? blogPosts : fallbackPosts;
   <section class="py-12 px-6 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-900 dark:to-slate-950 text-white">
     <div class="max-w-5xl mx-auto">
       <h1 class="text-5xl lg:text-6xl font-bold mb-4">My Blog</h1>
-      <p class="text-xl text-slate-300 mb-6">
-        Insights on DevOps, Cloud Architecture, SRE practices, and infrastructure automation
+      <p class="text-xl text-slate-300 mb-2">
+        DevOps insights, cloud architecture, SRE practices, and infrastructure automation
       </p>
-      <a href={mediumProfile.url} target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
-        Follow on Medium ↗
-      </a>
+      <p class="text-slate-400 mb-6">
+        Technical writing, documentation, and sharing what I learn with the community
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href={mediumProfile.url} target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-white text-slate-900 font-semibold rounded-lg hover:bg-slate-100 transition-colors">
+          Follow on Medium ↗
+        </a>
+        <a href={mediumProfile.rssFeed} target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors border border-slate-600">
+          Subscribe to RSS Feed 📡
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why I Write Section -->
+  <section class="py-12 px-6 bg-slate-50 dark:bg-slate-900">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Why I Write</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+          <div class="text-3xl mb-3">✍️</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Improve My Writing</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Clear technical writing is a powerful skill. Blogging helps me communicate complex DevOps concepts in ways others can understand.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+          <div class="text-3xl mb-3">📚</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Document & Remember</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Writing documentation solidifies what I learn. What I document today becomes my reference tomorrow.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+          <div class="text-3xl mb-3">🤝</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Share Knowledge</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            The DevOps community has taught me everything. Sharing my learnings helps others grow faster.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
+          <div class="text-3xl mb-3">🎯</div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Build My Brand</h3>
+          <p class="text-slate-600 dark:text-slate-400">
+            Quality technical writing showcases expertise, builds trust, and opens doors to opportunities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics I Write About -->
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-slate-900 dark:text-white">Topics I Write About</h2>
+      
+      <div class="grid md:grid-cols-2 gap-4 mb-12">
+        <div class="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <span class="text-2xl">☸️</span>
+          <div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Kubernetes & Container Orchestration</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">EKS, AKS, Helm, deployment patterns</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <span class="text-2xl">☁️</span>
+          <div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Cloud Architecture</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">AWS, Azure, multi-cloud strategies</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <span class="text-2xl">🔧</span>
+          <div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Infrastructure as Code</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Terraform, CloudFormation, automation</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <span class="text-2xl">🚀</span>
+          <div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">CI/CD & DevOps</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Jenkins, GitLab CI, pipeline optimization</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <span class="text-2xl">📊</span>
+          <div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Observability & SRE</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">Prometheus, Grafana, monitoring, SLOs</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+          <span class="text-2xl">🎯</span>
+          <div>
+            <h4 class="font-semibold text-slate-900 dark:text-white">Interview Preparation</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">DevOps technical interviews, system design</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -79,59 +185,51 @@ const posts = blogPosts.length > 0 ? blogPosts : fallbackPosts;
     </div>
   </section>
 
-  <!-- Medium CTA -->
+  <!-- CTA Section -->
   <section class="py-12 px-6 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
     <div class="max-w-4xl mx-auto">
       <div class="bg-white dark:bg-slate-800 rounded-lg p-8 border border-slate-200 dark:border-slate-700">
         <div class="flex items-center gap-4 mb-4">
-          <div class="text-4xl">✍️</div>
-          <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Want More Content?</h3>
+          <div class="text-4xl">📖</div>
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Stay Updated with New Articles</h3>
         </div>
         <p class="text-slate-600 dark:text-slate-400 mb-6">
-          I regularly publish articles on Medium covering DevOps practices, cloud architecture, infrastructure automation, and SRE insights. Follow my profile to stay updated with the latest content.
+          I publish weekly articles on DevOps best practices, cloud architecture patterns, interview preparation guides, and infrastructure automation techniques. Choose your preferred way to follow:
         </p>
+        
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
+            <h4 class="font-semibold text-slate-900 dark:text-white mb-2">📡 RSS Feed (Recommended)</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">
+              Get new articles delivered to your RSS reader automatically. Never miss an update!
+            </p>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
+            <h4 class="font-semibold text-slate-900 dark:text-white mb-2">❤️ Medium Platform</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">
+              Follow my profile to see my latest articles in your Medium feed.
+            </p>
+          </div>
+        </div>
+        
         <div class="flex flex-wrap gap-4">
-          <a 
-            href={mediumProfile.url} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-colors"
-          >
-            Follow on Medium
-          </a>
           <a 
             href={mediumProfile.rssFeed}
             target="_blank" 
             rel="noopener noreferrer"
+            class="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+          >
+            📡 Subscribe to RSS Feed
+          </a>
+          <a 
+            href={mediumProfile.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
             class="px-6 py-3 border-2 border-teal-600 text-teal-600 dark:text-teal-400 font-semibold rounded-lg hover:bg-teal-50 dark:hover:bg-teal-950/20 transition-colors"
           >
-            Subscribe to RSS Feed
+            Follow on Medium
           </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Topics Section -->
-  <section class="py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-slate-900 dark:text-white">Topics I Write About</h2>
-      
-      <div class="grid md:grid-cols-3 gap-4">
-        {[
-          { icon: '☸️', title: 'Kubernetes', description: 'Container orchestration, EKS, AKS deployments' },
-          { icon: '🔧', title: 'Infrastructure as Code', description: 'Terraform, CloudFormation, Ansible' },
-          { icon: '☁️', title: 'Cloud Architecture', description: 'AWS and Azure multi-cloud design' },
-          { icon: '📊', title: 'SRE & Observability', description: 'Monitoring, alerting, incident management' },
-          { icon: '🚀', title: 'CI/CD Pipelines', description: 'Jenkins, GitLab CI, GitHub Actions' },
-          { icon: '🔒', title: 'DevSecOps', description: 'Security scanning, compliance, container security' }
-        ].map((topic) => (
-          <div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-400 transition-colors">
-            <div class="text-3xl mb-3">{topic.icon}</div>
-            <h4 class="font-semibold text-slate-900 dark:text-white mb-2">{topic.title}</h4>
-            <p class="text-sm text-slate-600 dark:text-slate-400">{topic.description}</p>
-          </div>
-        ))}
       </div>
     </div>
   </section>
