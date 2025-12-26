@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { projects, industryProjects } from '../data/projects';
+import { getPinnedRepos } from '../lib/github';
+
+const pinnedRepos = await getPinnedRepos(6);
 ---
 
 <BaseLayout title="Projects" description="My cloud, DevOps, and infrastructure projects">
@@ -78,14 +81,64 @@ import { projects, industryProjects } from '../data/projects';
         Open Source & Personal Projects
       </h2>
       <p class="text-slate-600 dark:text-slate-400 mb-12">
-        GitHub repositories and learning projects
+        GitHub pinned repositories - dynamically loaded from my profile
       </p>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        {projects.map(project => (
-          <ProjectCard project={project} />
-        ))}
-      </div>
+      {pinnedRepos.length > 0 ? (
+        <div class="grid md:grid-cols-2 gap-6">
+          {pinnedRepos.map((repo) => (
+            <a href={repo.url} target="_blank" rel="noopener noreferrer" class="group">
+              <div class="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700 hover:border-teal-400 dark:hover:border-teal-400 transition-all h-full">
+                <div class="flex items-start justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-slate-700 dark:text-slate-400" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M2 2.5A2.5 2.5 0 015 5h6a2.5 2.5 0 110 5H6v1.006A2.502 2.502 0 1010.5 14H4a4 4 0 01-3.356-6.236A4 4 0 012 2.5z"/>
+                    </svg>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                      {repo.name}
+                    </h3>
+                  </div>
+                </div>
+
+                {repo.description && (
+                  <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+                    {repo.description}
+                  </p>
+                )}
+
+                <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-500">
+                  <div class="flex items-center gap-4">
+                    {repo.language && (
+                      <div class="flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-teal-600"></span>
+                        {repo.language}
+                      </div>
+                    )}
+                    {repo.stars > 0 && (
+                      <div class="flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M8 .5a.5.5 0 01.919-.245l1.59 3.218a.5.5 0 00.402.242h3.64a.5.5 0 01.312.904l-2.931 2.362a.5.5 0 00-.163.556l1.59 3.218a.5.5 0 01-.827.596L8 10.71l-2.932 2.362a.5.5 0 01-.827-.596l1.59-3.218a.5.5 0 00-.163-.556L2.537 5.62a.5.5 0 01.312-.904h3.64a.5.5 0 00.402-.242L7.081.255A.5.5 0 018 .5z"/>
+                        </svg>
+                        {repo.stars}
+                      </div>
+                    )}
+                  </div>
+                  <span class="text-xs text-teal-600 dark:text-teal-400 font-semibold">View →</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-12 text-center border border-slate-200 dark:border-slate-700">
+          <p class="text-slate-600 dark:text-slate-400 mb-4">Using static project showcase</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            {projects.map(project => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 

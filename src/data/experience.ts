@@ -6,7 +6,7 @@ export const experience = [
     location: "Plano, TX",
     startDate: "Oct 2024",
     endDate: "Present",
-    duration: "3 months",
+    duration: "1 year 2 months",
     description: "Cloud Infrastructure, Kubernetes, SRE & Observability",
     achievements: [
       "Architected and deployed AWS EKS clusters with managed nodes and Fargate profiles using Terraform, enabling scalable, secure, and highly available Kubernetes infrastructure",
@@ -49,33 +49,39 @@ export const experience = [
 export const timelineEvents = [
   {
     year: 2017,
-    title: "Career Start",
-    description: "Began professional journey in DevOps & Cloud Infrastructure",
+    title: "Career Foundation",
+    description: "Began professional journey mastering Linux infrastructure and DevOps automation",
     type: "milestone"
   },
   {
     year: 2019,
-    title: "AT&T Role",
-    description: "Joined Technumen as DevOps Engineer for AT&T",
+    title: "AT&T DevOps Role",
+    description: "Joined Technumen as DevOps Engineer, pioneering multi-cloud infrastructure strategy",
     type: "role"
   },
   {
     year: 2022,
     title: "AWS Certification",
-    description: "Certified Solutions Architect - Associate",
+    description: "Certified Solutions Architect - Associate - validated cloud architecture expertise",
     type: "certification"
   },
   {
     year: 2023,
     title: "Azure Certification",
-    description: "Azure Administrator Associate",
+    description: "Azure Administrator Associate - expanded multi-cloud expertise",
     type: "certification"
   },
   {
     year: 2024,
-    title: "USAA Role & CKA",
-    description: "Advanced to USAA role; Started CKA certification journey",
+    title: "USAA DevSecOps to SRE",
+    description: "Hired as DevSecOps Engineer, transitioned to AWS Pipeline & EKS infrastructure team",
     type: "role"
+  },
+  {
+    year: 2025,
+    title: "CKA Certification Journey",
+    description: "Pursuing Certified Kubernetes Administrator - deepening container orchestration mastery",
+    type: "certification"
   }
 ];
 

@@ -1,7 +1,7 @@
 export const skillCategories = [
   {
     category: "Operating Systems",
-    skills: ["Linux (RHEL, SUSE)", "Windows (2019/2022)"]
+    skills: ["Linux (RHEL, SUSE)", "Windows"]
   },
   {
     category: "Languages",
@@ -9,7 +9,7 @@ export const skillCategories = [
   },
   {
     category: "DevOps & CI/CD",
-    skills: ["Git", "Bitbucket", "GitLab", "Jenkins", "SonarQube", "Veracode", "GitLab CI/CD"]
+    skills: ["Git", "Bitbucket", "GitLab", "Jenkins", "GitLab CI/CD"]
   },
   {
     category: "Infrastructure & Orchestration",
